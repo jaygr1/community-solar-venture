@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: projects
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  monthly_utility_bill :string
+#  zip_code             :string
+#  kwh_price            :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  monthly_utility_bill: MyString
+  zip_code: MyString
+  kwh_price: MyString
+
+two:
+  name: MyString
+  monthly_utility_bill: MyString
+  zip_code: MyString
+  kwh_price: MyString

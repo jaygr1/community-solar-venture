@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409161845) do
+ActiveRecord::Schema.define(version: 20160409182634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20160409161845) do
     t.datetime "updated_at"
     t.string   "company"
     t.string   "name"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "monthly_utility_bill"
+    t.string   "zip_code"
+    t.string   "kwh_price"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "prospects", force: :cascade do |t|
@@ -55,5 +64,31 @@ ActiveRecord::Schema.define(version: 20160409161845) do
 
   add_index "prospects", ["email"], name: "index_prospects_on_email", unique: true, using: :btree
   add_index "prospects", ["reset_password_token"], name: "index_prospects_on_reset_password_token", unique: true, using: :btree
+
+  create_table "utility_provider_projects", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "zip_code_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "utility_providers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "zip_code_projects", force: :cascade do |t|
+    t.integer  "zip_code_id"
+    t.integer  "project_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "zip_codes", force: :cascade do |t|
+    t.string   "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
