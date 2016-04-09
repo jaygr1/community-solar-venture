@@ -1,0 +1,12 @@
+<%= render 'layouts/header' %>
+<%= render 'layouts/navbar' %>
+
+<div class='main'>
+<h1><%= @project.name %></h1>
+
+Most likely a fit if your electric bill is around $<%= @project.monthly_utility_bill %> per month <br>
+
+We're providing energy at the equivalent of $<%= @project.kwh_price %> per hour
+
+</div>
+<%= render 'layouts/footer' %>

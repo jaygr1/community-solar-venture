@@ -1,0 +1,8 @@
+<%= render 'layouts/header' %>
+<%= render 'layouts/navbar' %>
+
+<% @projects.each do |project| %>
+<%= link_to "#{project.name}", project %><br>
+<% end %>
+
+<%= render 'layouts/footer' %>

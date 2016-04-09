@@ -1,0 +1,19 @@
+<%= render 'layouts/header' %>
+<%= render 'layouts/navbar' %>
+<div class='main'>
+<h1> Create a new project </h1>
+<%= form_for @project do |f| %>
+<%= f.label "Project Title" %>
+<%= f.text_field :name %><br><br>
+<%= f.label "Expected consumer monthly utility bill (range)" %>
+<%= f.number_field :monthly_utility_bill %><br><br>
+<%= f.label "Price per KwH" %>
+<%= f.text_field :kwh_price %><br><br>
+<%= f.label "Minimum credit score" %>
+<%= f.number_field :minimum_credit_score %> <br><br>
+<%= f.label "Applicable zip codes" %>
+<%= f.text_field (:zip_code, :zip_code[]) %>
+<%= f.submit %>
+<% end %>
+</div><br>
+<%= render 'layouts/footer' %>

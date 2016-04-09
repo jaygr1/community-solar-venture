@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409182634) do
+ActiveRecord::Schema.define(version: 20160409193737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160409182634) do
     t.string   "kwh_price"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "minimum_credit_score"
   end
 
   create_table "prospects", force: :cascade do |t|
