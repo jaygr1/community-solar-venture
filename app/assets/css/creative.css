@@ -14,6 +14,12 @@ body {
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
 }
 
+.main {
+  margin-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 hr {
     max-width: 50px;
     border-color: #f05f40;
