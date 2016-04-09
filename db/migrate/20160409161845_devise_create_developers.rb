@@ -12,6 +12,8 @@ class DeviseCreateDevelopers < ActiveRecord::Migration
       t.string   :unlock_token # Only if unlock strategy is :email or :both
       t.datetime :locked_at
       t.timestamps
+      t.string :company
+      t.string :name
     end
   end
 
